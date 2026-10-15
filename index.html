@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AERO Manzana: la manzana más fresca del año.">
+  <title>[nombre marca/logo] Manzana | La más fresca del año</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="bubbles" id="bubbles"></div>
+
+
+  <nav class="nav">
+    <a href="#inicio" class="logo">[nombre marca/logo]</a>
+    <ul class="nav-links">
+      <li><a href="#features">Características</a></li>
+      <li><a href="#producto">Producto</a></li>
+      <li><a href="#comprar">Comprar</a></li>
+    </ul>
+  </nav>
+  <header class="hero" id="inicio">
+    <div class="apple-wrap" id="appleWrap">
+      <div class="apple-float">
+        <svg class="apple" id="apple" viewBox="0 0 200 220" aria-label="Manzana roja">
+          <defs>
+            <radialGradient id="cuerpo" cx="35%" cy="30%" r="75%">
+              <stop offset="0" stop-color="#ff8a80"/>
+              <stop offset="0.45" stop-color="#e53935"/>
+              <stop offset="1" stop-color="#8e0000"/>
+            </radialGradient>
+            <linearGradient id="hoja" x1="0" y1="0" x2="1" y2="1">
+              <stop offset="0" stop-color="#b2ff59"/>
+              <stop offset="1" stop-color="#2e7d32"/>
+            </linearGradient>
+          </defs>
+          <path d="M100 55 C70 35 15 50 15 115 C15 170 55 210 85 205 C95 203 105 203 115 205 C145 210 185 170 185 115 C185 50 130 35 100 55Z" fill="url(#cuerpo)"/>
+          <path d="M100 58 C100 40 105 28 112 18" stroke="#5d4037" stroke-width="7" stroke-linecap="round" fill="none"/>
+          <path d="M112 38 C125 15 155 12 170 22 C160 45 130 52 112 38Z" fill="url(#hoja)"/>
+          <ellipse cx="55" cy="85" rx="18" ry="30" transform="rotate(-25 55 85)" fill="#fff" opacity="0.45"/> <!--Dibujo de la manzana, evitando usar imagenes-->
+        </svg>
+      </div>
+    </div>
+    <h1 class="title">Manzana</h1>
+    <p class="subtitle">Frescura cristalina en cada mordisco.</p>
+    <a href="#comprar" class="btn">Quiero la mía</a>
+  </header>
+
+  <main>
+    <section id="features" class="section">
+      <h2 class="reveal">¿Por qué [marca/logo]?</h2>
+      <div class="cards">
+        <article class="card reveal"><h3>Crujiente</h3><p>Cosechada en su punto exacto de frescura.</p></article>
+        <article class="card reveal"><h3>Jugosa</h3><p>Dulzor natural con un toque ácido.</p></article>
+        <article class="card reveal"><h3>100% natural</h3><p>Sin cera, sin aditivos, solo manzana.</p></article>
+      </div>
+    </section>
+
+    <!-- Detalle del producto -->
+    <section id="producto" class="section section-alt">
+      <div class="split">
+        <div class="reveal">
+          <h2>Del huerto a tu mano</h2>
+          <p>Aquí va la historia del producto: de dónde viene, cómo se cultiva y qué la hace especial. Hay que rellenarlo después.</p>
+        </div>
+        <ul class="stats reveal">
+          <li><strong>0</strong><span>aditivos</span></li>
+          <li><strong>48 h</strong><span>del huerto a la tienda</span></li>
+          <li><strong>100%</strong><span>natural</span></li> <!--Todo esto inventadisimo-->
+        </ul>
+      </div>
+    </section>
+
+    <section id="comprar" class="section cta">
+      <h2 class="reveal">Prueba la manzana más fresca</h2>
+      <p class="reveal">Disponible por tiempo limitado.</p>
+      <a href="#inicio" class="btn reveal">Comprar ahora</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <div>
+        <strong class="logo">nombre marca/logo</strong>
+        <p>La manzana más fresca del año.</p>
+      </div>
+      <div>
+        <h4>Navegación</h4>
+        <ul>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#producto">Producto</a></li>
+          <li><a href="#comprar">Comprar</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <ul>
+          <li>hola@aeromanzana.cl</li>
+          <li>Coquimbo, Chile</li>
+        </ul>
+      </div>
+    </div>
+    <p class="copy">© 2026 [nombre marca/logo] Manzana · Proyecto académico, Taller 1 Web Móvil</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>s
