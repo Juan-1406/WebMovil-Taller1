@@ -90,3 +90,9 @@ tarjetas.forEach((tarjeta) => {
     tarjeta.style.setProperty('--luz-y', '0%');
   });
 });
+
+/* animacion para los <h1> */
+const titulo = document.querySelector('.title');
+titulo.innerHTML = [...titulo.textContent].map((letra, i) => 
+  `<span class="letra" style="animation-delay: ${i * 0.1}s">${letra === ' ' ? '&nbsp;' : letra}</span>`
+).join('');

@@ -74,7 +74,7 @@ ul { list-style: none; }
   border: 1px solid var(--acento);
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
-.btn:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: translateY(-2px); }
+.btn:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: scale(1.5); }
 
 /* Secciones */
 .section { position: relative; z-index: 1; padding: 5rem 1.5rem; }
@@ -167,4 +167,43 @@ nav a[href^="#"]:hover::after {transform: scaleX(1);}
 
 @media (prefers-reduced-motion: reduce) {
   nav a[href^="#"]::after {transition: none;}
+}
+/* animacion para los <p> */
+p {
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+p:hover {
+  transform: scale(1.05); /* O translateY(-2px) si prefieres que suba */
+}
+
+
+.letra {
+  display: inline-block; /* Obligatorio para que un span pueda saltar con transform */
+  animation: saltoPixar 2.5s ease-in-out infinite;
+}
+
+/* animacion <h1> */
+@keyframes saltoPixar {
+  0%, 40%, 100% {
+    transform: translateY(0) scale(1, 1); /* Quieta en el suelo */
+  }
+  10% {
+    transform: translateY(0) scale(1.25, 0.75); /* Se aplasta tomando impulso */
+  }
+  20% {
+    transform: translateY(-28px) scale(0.9, 1.15); /* Salta alto y se estira */
+  }
+  30% {
+    transform: translateY(0) scale(1.15, 0.85); /* Rebote al aterrizar */
+  }
+}
+
+/* animacion para los li */
+li {
+  transition: transform 0.2s ease;
+}
+
+li:hover {
+  transform: scale(1.08); /* O translateY(-3px) si prefieres que suban */
 }
