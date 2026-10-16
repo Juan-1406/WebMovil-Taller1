@@ -153,3 +153,18 @@ body {
   background: linear-gradient(90deg, #7fe3ff, #0b6fa4, #b2ff59);
   pointer-events: none;
 }
+
+/* Subrayado animado al pasar el cursor */
+nav a[href^="#"] {position: relative;}
+
+nav a[href^="#"]::after {
+  content: ""; position: absolute; left: 0; bottom: -5px; width: 100%; height: 2px;
+  background: var(--acento); border-radius: 10px; transform: scaleX(0);
+  transform-origin: center; transition: transform 0.3s ease;
+}
+
+nav a[href^="#"]:hover::after {transform: scaleX(1);}
+
+@media (prefers-reduced-motion: reduce) {
+  nav a[href^="#"]::after {transition: none;}
+}
