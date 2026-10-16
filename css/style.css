@@ -83,7 +83,28 @@ ul { list-style: none; }
 #features h2 { text-align: center; }
 .section-alt { background: var(--gris); }
 .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
-.card { padding: 1.8rem; border-radius: 16px; background: #fff; border: 1px solid #e3edf4; }
+.card {
+  position: relative; isolation: isolate; overflow: hidden; padding: 1.8rem; border-radius: 20px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(220, 245, 255, 0.55));
+  border: 1px solid rgba(225, 255, 255, 0.9);
+  box-shadow: 0 8px 24px rgba(11, 111, 164, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+.card::before {
+  content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+  background: radial-gradient(circle at var(--luz-x, 50%) var(--luz-y, 0%), rgba(255, 255, 255, 0.9), rgba(127, 227, 255, 0.18) 35%, transparent 70%);
+  opacity: 0.8; transition: opacity 0.3s ease;
+}
+.card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(127, 227, 255, 0.9);
+  box-shadow: 0 18px 35px rgba(11, 111, 164, 0.16), inset 0 1px 0 rgba(255, 255, 255, 1);
+}
+.card:hover::before {
+  opacity: 1;
+}
+
 .card h3 { color: var(--azul); margin-bottom: 0.5rem; }
 
 .split { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; align-items: center; }
@@ -115,4 +136,20 @@ ul { list-style: none; }
   .nav-links { gap: 0.9rem; font-size: 0.85rem; }
   .hero { padding: 5rem 1.2rem 2rem; }
   .section { padding: 3.5rem 1.2rem; }
+}
+
+/* Fondo cielo/agua*/
+body {
+  background: linear-gradient(100deg, #dff4ff 0%, #bfe8ff 35%, #e8fbf0 70%, #ffffff 100%);
+  background-attachment: fixed;
+}
+
+.section-alt {background: rgba(244, 248, 251, 0.55);}
+
+/* Barra de progreso de scroll */
+.scroll-bar {
+  position: fixed; top: 0; left: 0; width: 100%; height: 4px; z-index: 20;
+  transform-origin: left; transform: scaleX(0);
+  background: linear-gradient(90deg, #7fe3ff, #0b6fa4, #b2ff59);
+  pointer-events: none;
 }

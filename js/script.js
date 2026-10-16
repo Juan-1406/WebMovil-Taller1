@@ -62,3 +62,31 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.2 });
 document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+
+/* Req. 4 + 6: barra de progreso que crece según el scroll */
+const barra = document.createElement('div');
+barra.className = 'scroll-bar';
+document.body.appendChild(barra);
+window.addEventListener('scroll', () => {
+  const max = document.documentElement.scrollHeight - window.innerHeight;
+  barra.style.transform = `scaleX(${max > 0 ? window.scrollY / max : 0})`;
+}, {passive : true});
+
+/* Hacer que la luz de la tarjeta siga al cursor */
+const tarjetas = document.querySelectorAll('.card');
+tarjetas.forEach((tarjeta) => {
+  tarjeta.addEventListener('pointermove', (evento) => {
+    const rect = tarjeta.getBoundingClientRect();
+
+    const x = ((evento.clientX - rect.left) / rect.width) * 100;
+    const y = ((evento.clientY - rect.top) / rect.height) * 100;
+
+    tarjeta.style.setProperty('--luz-x', `${x}%`);
+    tarjeta.style.setProperty('--luz-y', `${y}%`);
+  });
+
+  tarjeta.addEventListener('pointerleave', () => {
+    tarjeta.style.setProperty('--luz-x', '50%');
+    tarjeta.style.setProperty('--luz-y', '0%');
+  });
+});
