@@ -96,3 +96,27 @@ const titulo = document.querySelector('.title');
 titulo.innerHTML = [...titulo.textContent].map((letra, i) => 
   `<span class="letra" style="animation-delay: ${i * 0.1}s">${letra === ' ' ? '&nbsp;' : letra}</span>`
 ).join('');
+
+
+/* --- Manzanas laterales que salen de los bordes en #comprar --- */
+const seccionComprar = document.getElementById('comprar');
+
+if (seccionComprar && apple) {
+  ['left', 'right'].forEach((lado) => {
+    const contenedorManzana = document.createElement('div');
+    contenedorManzana.className = `side-apple ${lado} reveal`;
+
+    // Clonamos el SVG de la manzana principal
+    const clonManzana = apple.cloneNode(true);
+    clonManzana.removeAttribute('id'); // Evitamos IDs duplicados
+    clonManzana.removeAttribute('style'); // Limpiamos la inclinación del mouse
+    clonManzana.style.width = '100%';
+
+    contenedorManzana.appendChild(clonManzana);
+    seccionComprar.appendChild(contenedorManzana);
+
+    // Las agregamos al IntersectionObserver que ya tienes creado
+    observer.observe(contenedorManzana);
+  });
+}
+

@@ -249,3 +249,58 @@ li:hover {
 
 /* Texto pequeño sobre el título */
 .eyebrow {margin-bottom: 14px; color: #1686a8; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;}
+
+
+
+
+/* --- Manzanas laterales--- */
+.cta {
+  position: relative;
+  overflow: hidden; 
+}
+
+.side-apple {
+  position: absolute;
+  top: 50%;
+  width: clamp(110px, 20vw, 200px);
+  pointer-events: none; 
+  z-index: 0;
+  opacity: 0;
+  filter: drop-shadow(0 15px 20px rgba(0, 60, 90, 0.25));
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.8s ease;
+}
+
+/* Manzana izquierda */
+.side-apple.left {
+  left: -30px;
+  transform: translate(-120%, -50%) rotate(-35deg) scale(0.8);
+}
+
+/* Manzana derecha */
+.side-apple.right {
+  right: -30px;
+  transform: translate(120%, -50%) scaleX(-1) rotate(-35deg) scale(0.8);
+}
+
+
+.cta:has(.reveal.visible) .side-apple.left,
+.side-apple.left.visible {
+  opacity: 1;
+  transform: translate(0, -50%) rotate(20deg) scale(1);
+}
+
+.cta:has(.reveal.visible) .side-apple.right,
+.side-apple.right.visible {
+  opacity: 1;
+  transform: translate(0, -50%) scaleX(-1) rotate(20deg) scale(1);
+}
+
+/* Ajuste para celulares */
+@media (max-width: 600px) {
+  .side-apple {
+    width: 95px;
+    top: 65%;
+  }
+  .side-apple.left { left: -25px; }
+  .side-apple.right { right: -25px; }
+}
