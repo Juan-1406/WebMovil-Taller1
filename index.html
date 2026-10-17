@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="AERO Manzana: la manzana más fresca del año.">
+  <meta name="description" content="AquaApple: la manzana más fresca del año.">
   <title>AquaApple | La manzana más fresca</title>
-  <link rel="icon" type="image/png" href="assets/icono.jpg">
+  <link rel="icon" type="image/jpeg" href="assets/icono.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -25,25 +25,27 @@
   </nav>
 
   <header class="hero" id="inicio">
-    <div class="apple-wrap" id="appleWrap">
-      <div class="apple-float">
-        <svg class="apple" id="apple" viewBox="0 0 200 220" aria-label="Manzana roja">
-          <defs>
-            <radialGradient id="cuerpo" cx="35%" cy="30%" r="75%">
-              <stop offset="0" stop-color="#ff8a80"/>
-              <stop offset="0.45" stop-color="#e53935"/>
-              <stop offset="1" stop-color="#8e0000"/>
-            </radialGradient>
-            <linearGradient id="hoja" x1="0" y1="0" x2="1" y2="1">
-              <stop offset="0" stop-color="#b2ff59"/>
-              <stop offset="1" stop-color="#2e7d32"/>
-            </linearGradient>
-          </defs>
-          <path d="M100 55 C70 35 15 50 15 115 C15 170 55 210 85 205 C95 203 105 203 115 205 C145 210 185 170 185 115 C185 50 130 35 100 55Z" fill="url(#cuerpo)"/>
-          <path d="M100 58 C100 40 105 28 112 18" stroke="#5d4037" stroke-width="7" stroke-linecap="round" fill="none"/>
-          <path d="M112 38 C125 15 155 12 170 22 C160 45 130 52 112 38Z" fill="url(#hoja)"/>
-          <ellipse cx="55" cy="85" rx="18" ry="30" transform="rotate(-25 55 85)" fill="#fff" opacity="0.45"/> <!--Dibujo de la manzana, evitando usar imagenes-->
-        </svg>
+    <div class="apple-intro"> 
+      <div class="apple-wrap" id="appleWrap">
+        <div class="apple-float">
+          <svg class="apple" id="apple" viewBox="0 0 200 220" aria-label="Manzana roja">
+            <defs>
+              <radialGradient id="cuerpo" cx="35%" cy="30%" r="75%">
+                <stop offset="0" stop-color="#ff8a80"/>
+                <stop offset="0.45" stop-color="#e53935"/>
+                <stop offset="1" stop-color="#8e0000"/>
+              </radialGradient>
+              <linearGradient id="hoja" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#b2ff59"/>
+                <stop offset="1" stop-color="#2e7d32"/>
+              </linearGradient>
+            </defs>
+            <path d="M100 55 C70 35 15 50 15 115 C15 170 55 210 85 205 C95 203 105 203 115 205 C145 210 185 170 185 115 C185 50 130 35 100 55Z" fill="url(#cuerpo)"/>
+            <path d="M100 58 C100 40 105 28 112 18" stroke="#5d4037" stroke-width="7" stroke-linecap="round" fill="none"/>
+            <path d="M112 38 C125 15 155 12 170 22 C160 45 130 52 112 38Z" fill="url(#hoja)"/>
+            <ellipse cx="55" cy="85" rx="18" ry="30" transform="rotate(-25 55 85)" fill="#fff" opacity="0.45"/> <!--Dibujo de la manzana, evitando usar imagenes-->
+          </svg>
+        </div>
       </div>
     </div>
     <h1 class="title">Manzana</h1>
@@ -92,9 +94,10 @@
           <p>En el corazón indómito de las montañas de Tian Shan, donde las cumbres acarician el cielo y los secretos de la Tierra permanecen congelados en el tiempo, nació una leyenda. Hace más de diez mil años, la naturaleza esculpió el primer brote de la Malus sieversii, la manzana ancestral. No era una simple fruta; era un tesoro de dulzura pura y resistencia implacable, un regalo divino oculto en los valles más salvajes de Asia Central que desafió inviernos brutales y soles inclementes para salvaguardar el secreto del sabor perfecto.</p>
         </div>
         <ul class="stats reveal">
-          <li><strong>0</strong><span>aditivos</span></li>
-          <li><strong>48 h</strong><span>del huerto a la tienda</span></li>
-          <li><strong>100%</strong><span>natural</span></li> <!--Todo esto inventadisimo-->
+          <li><strong data-valor="0">0</strong><span>aditivos</span></li>
+          <li><strong data-valor="48" data-sufijo=" h">48 h</strong><span>del huerto a la tienda</span></li>
+          <li><strong data-valor="100" data-sufijo="%">100%</strong><span>natural</span></li>
+          <!--Todo esto inventadisimo-->
         </ul>
       </div>
     </section>
@@ -124,7 +127,7 @@
       <div>
         <h4>Contacto</h4>
         <ul>
-          <li>aquaApple@aeromanzana.cl</li>
+          <li>aquaApple@aquaapple.cl</li>
           <li>Coquimbo, Chile</li>
         </ul>
       </div>
@@ -160,6 +163,9 @@
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="js/script.js"></script>
+  <script src="js/gsap-animaciones.js"></script>
 </body>
 </html>

@@ -74,7 +74,7 @@ ul { list-style: none; }
   border: 1px solid var(--acento);
   transition: background 0.2s, border-color 0.2s, transform 0.2s;
 }
-.btn:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: scale(1.5); }
+.btn:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: scale(1.15); }
 
 /* Secciones */
 .section {position: relative; z-index: 1; padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.2rem, 7vw, 7rem);}
@@ -87,7 +87,9 @@ ul { list-style: none; }
 
 /* Distribución de las tarjetas */
 .cards {
-  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; max-width: 1160px;margin: 0 auto;}
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem; max-width: 1160px; margin: 0 auto;
+}
 
 /* Tarjetas con efecto de cristal */
 .card {
@@ -149,6 +151,7 @@ ul { list-style: none; }
 
 .cta { text-align: center; }
 .cta p { margin-bottom: 1.5rem; }
+.cta h2 { font-size: clamp(2rem, 4vw, 3rem); color: var(--azul); margin-bottom: 1rem; }
 
 /* Footer */
 .footer { position: relative; z-index: 1; background: var(--texto); color: #dbeaf3; padding: 3rem 1.5rem 1.5rem; }
@@ -165,14 +168,9 @@ ul { list-style: none; }
 /* Entrada al hacer scroll */
 .reveal { opacity: 0; transform: translateY(40px) scale(0.96); transition: opacity 0.8s, transform 0.8s; }
 .reveal.visible { opacity: 1; transform: none; }
+.card.visible:hover { transform: translateY(-8px); }
+.card.reveal { transition: opacity 0.8s, transform 0.4s, box-shadow 0.3s, border-color 0.3s; }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .cards {grid-template-columns: 1fr; max-width: 480px;}
-  .card {min-height: auto; padding: 1.5rem;}
-  .feature-icon {margin-bottom: 1rem;}
-  .section-heading {margin-bottom: 2rem;}
-}
 
 /* Fondo cielo/agua*/
 body {
@@ -252,6 +250,7 @@ li:hover {
 
 /* --- Manzanas laterales--- */
 .cta {position: relative; overflow: hidden;}
+.cta h2, .cta p, .cta .btn { position: relative; z-index: 1; }
 .side-apple {
   position: absolute;
   top: 50%;
@@ -320,3 +319,16 @@ li:hover {
   }
 .boton-pedido:hover {transform: translateY(-2px);}
 #mensajePedido {margin-top: 12px;}
+
+
+/* Responsive */
+@media (max-width: 600px) {
+  .cards {grid-template-columns: 1fr; max-width: 480px;}
+  .card {min-height: auto; padding: 1.5rem;}
+  .feature-icon {margin-bottom: 1rem;}
+  .section-heading {margin-bottom: 2rem;}
+  .nav { padding: 0.6rem 0.8rem; flex-wrap: wrap; row-gap: 0.3rem; }
+  .logo { font-size: 1rem; letter-spacing: 1px; gap: 6px; }
+  .logo-icon { width: 24px; height: 24px; }
+  .nav-links { gap: 0.7rem; font-size: 0.8rem; }
+}
