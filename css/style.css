@@ -77,33 +77,69 @@ ul { list-style: none; }
 .btn:hover { background: var(--acento-oscuro); border-color: var(--acento-oscuro); transform: scale(1.5); }
 
 /* Secciones */
-.section { position: relative; z-index: 1; padding: 5rem 1.5rem; }
-.section > * { max-width: 1000px; margin-left: auto; margin-right: auto; }
-.section h2 { font-size: 2.2rem; color: var(--azul); margin-bottom: 1.5rem; }
-#features h2 { text-align: center; }
-.section-alt { background: var(--gris); }
-.cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1.5rem; }
+.section {position: relative; z-index: 1; padding: clamp(4.5rem, 8vw, 7.5rem) clamp(1.2rem, 7vw, 7rem);}
+.section-heading {max-width: 750px; margin: 0 auto 3rem; text-align: center;}
+.section-heading .eyebrow {margin-bottom: 0.75rem;}
+.section-heading h2 {color: #063b54; font-size: clamp(2rem, 4vw, 3.6rem); line-height: 1.12; letter-spacing: -0.045em;}
+.section-heading h2 span {color: #0879a8;}
+.section-heading > p:last-child {margin-top: 1rem; color: #5c7e8c;}
+.features-section {background: rgba(255, 255, 255, 0.25);}
+
+/* Distribución de las tarjetas */
+.cards {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; max-width: 1160px;margin: 0 auto;}
+
+/* Tarjetas con efecto de cristal */
 .card {
-  position: relative; isolation: isolate; overflow: hidden; padding: 1.8rem; border-radius: 20px;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.88), rgba(220, 245, 255, 0.55));
-  border: 1px solid rgba(225, 255, 255, 0.9);
-  box-shadow: 0 8px 24px rgba(11, 111, 164, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+  --luz-x: 50%; --luz-y: 0%;
+  position: relative; isolation: isolate; overflow: hidden; min-height: 275px; padding: 1.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.92); border-radius: 24px;
+  background: linear-gradient(145deg,rgba(255, 255, 255, 0.8),rgba(225, 248, 255, 0.48));
+  box-shadow: 0 12px 34px rgba(11, 111, 164, 0.07), inset 0 1px 0 rgba(255, 255, 255, 0.9);
   backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
   transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
+
+/* Reflejo que sigue al cursor */
 .card::before {
   content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
-  background: radial-gradient(circle at var(--luz-x, 50%) var(--luz-y, 0%), rgba(255, 255, 255, 0.9), rgba(127, 227, 255, 0.18) 35%, transparent 70%);
-  opacity: 0.8; transition: opacity 0.3s ease;
+  background: radial-gradient(circle at var(--luz-x) var(--luz-y),rgba(255, 255, 255, 0.95),rgba(127, 227, 255, 0.22) 38%, transparent 72%);
+  opacity: 0.65;transition: opacity 0.25s ease;
 }
-.card:hover {
-  transform: translateY(-8px);
-  border-color: rgba(127, 227, 255, 0.9);
-  box-shadow: 0 18px 35px rgba(11, 111, 164, 0.16), inset 0 1px 0 rgba(255, 255, 255, 1);
+.card:hover {transform: translateY(-8px); border-color: rgba(99, 211, 239, 0.9); box-shadow: 0 22px 42px rgba(11, 111, 164, 0.13);}
+.card:hover::before {opacity: 1;}
+
+/* Iconos decorativos */
+.feature-icon {
+  display: grid;
+  place-items: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 1.5rem;
+  border-radius: 17px;
+  font-size: 1.7rem;
 }
-.card:hover::before {
-  opacity: 1;
+
+.icon-crunch {
+  color: #0879a8;
+  background: #d7f5ff;
 }
+
+.icon-juice {
+  color: #199d91;
+  background: #d8f9eb;
+}
+
+.icon-leaf {
+  color: #368f57;
+  background: #e2f7d8;
+}
+
+/* Número y texto de cada tarjeta */
+.card-number {color: #6a9bab; font-size: 0.68rem; font-weight: 900;letter-spacing: 0.16em;}
+.card h3 {margin: 0.4rem 0 0.6rem; color: #07516f; font-size: 1.3rem;}
+.card > p:last-child {color: #5c7e8c; font-size: 0.94rem;}
+.section-footnote {max-width: 1160px; margin: 1.2rem auto 0; color: #6c8a95; font-size: 0.75rem;}
 
 .card h3 { color: var(--azul); margin-bottom: 0.5rem; }
 
@@ -132,10 +168,10 @@ ul { list-style: none; }
 
 /* Responsive */
 @media (max-width: 600px) {
-  .nav { padding: 0.7rem 1rem; }
-  .nav-links { gap: 0.9rem; font-size: 0.85rem; }
-  .hero { padding: 5rem 1.2rem 2rem; }
-  .section { padding: 3.5rem 1.2rem; }
+  .cards {grid-template-columns: 1fr; max-width: 480px;}
+  .card {min-height: auto; padding: 1.5rem;}
+  .feature-icon {margin-bottom: 1rem;}
+  .section-heading {margin-bottom: 2rem;}
 }
 
 /* Fondo cielo/agua*/
@@ -207,3 +243,7 @@ li {
 li:hover {
   transform: scale(1.08); /* O translateY(-3px) si prefieres que suban */
 }
+
+.logo {display: inline-flex; align-items: center; gap: 8px;text-decoration: none;}
+
+.logo-icon {width: 32px; height: 32px; object-fit: contain; vertical-align: middle;}

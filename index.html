@@ -4,22 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="AERO Manzana: la manzana más fresca del año.">
-  <title>[nombre marca/logo] Manzana | La más fresca del año</title>
+  <title>AquaApple | La manzana más fresca</title>
+  <link rel="icon" type="image/png" href="assets/icono.jpg">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
   <div class="bubbles" id="bubbles"></div>
-
-
   <nav class="nav">
-    <a href="#inicio" class="logo">[nombre marca/logo]</a>
+    <a href="#inicio" class="logo">
+      <img src="assets/icono.jpg" alt="" class="logo-icon">
+      AquaApple
+    </a>
+
     <ul class="nav-links">
       <li><a href="#features">Características</a></li>
       <li><a href="#producto">Producto</a></li>
       <li><a href="#comprar">Comprar</a></li>
     </ul>
   </nav>
+
   <header class="hero" id="inicio">
     <div class="apple-wrap" id="appleWrap">
       <div class="apple-float">
@@ -48,12 +52,34 @@
   </header>
 
   <main>
-    <section id="features" class="section">
-      <h2 class="reveal">¿Por qué [marca/logo]?</h2>
+    <section id="features" class="section features-section">
+      <div class="section-heading reveal">
+        <p class="eyebrow">NATURALEZA EN SU MEJOR VERSIÓN</p>
+        <h2>Lo simple se siente <span>extraordinario.</span></h2>
+        <p>Una experiencia fresca y crujiente.</p>
+      </div>
+
       <div class="cards">
-        <article class="card reveal"><h3>Crujiente</h3><p>Cosechada en su punto exacto de frescura.</p></article>
-        <article class="card reveal"><h3>Jugosa</h3><p>Dulzor natural con un toque ácido.</p></article>
-        <article class="card reveal"><h3>100% natural</h3><p>Sin cera, sin aditivos, solo manzana.</p></article>
+        <article class="card reveal">
+          <div class="feature-icon icon-crunch" aria-hidden="true">✨</div>
+          <p class="card-number">01 / TEXTURA</p>
+          <h3>Un crujido único</h3>
+          <p>Una textura firme que convierte cada mordisco en una experiencia refrescante.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="feature-icon icon-juice" aria-hidden="true">💧</div>
+          <p class="card-number">02 / SABOR</p>
+          <h3>Jugosa por naturaleza</h3>
+          <p>El equilibrio entre dulzor y un toque ácido para disfrutar a cualquier hora.</p>
+        </article>
+
+        <article class="card reveal">
+          <div class="feature-icon icon-leaf" aria-hidden="true">🍃</div>
+          <p class="card-number">03 / ORIGEN</p>
+          <h3>La naturaleza primero</h3>
+          <p>Una propuesta que celebra la fruta y su sabor, sin complicaciones innecesarias.</p>
+        </article>
       </div>
     </section>
 
@@ -83,7 +109,7 @@
   <footer class="footer">
     <div class="footer-grid">
       <div>
-        <strong class="logo">nombre marca/logo</strong>
+        <strong class="logo">AquaApple</strong>
         <p>La manzana más fresca del MILENIO.</p>
       </div>
       <div>
@@ -97,14 +123,14 @@
       <div>
         <h4>Contacto</h4>
         <ul>
-          <li>hola@aeromanzana.cl</li>
+          <li>aquaApple@aeromanzana.cl</li>
           <li>Coquimbo, Chile</li>
         </ul>
       </div>
     </div>
-    <p class="copy">© 2026 [nombre marca/logo] Manzana · Proyecto académico, Taller 1 Web Móvil</p>
+    <p class="copy">© 2026 AquaApple · Proyecto Académico, Taller 1 Web Móvil</p>
   </footer>
 
   <script src="js/script.js"></script>
 </body>
-</html>s
+</html>
