@@ -245,5 +245,7 @@ li:hover {
 }
 
 .logo {display: inline-flex; align-items: center; gap: 8px;text-decoration: none;}
-
 .logo-icon {width: 32px; height: 32px; object-fit: contain; vertical-align: middle;}
+
+/* Texto pequeño sobre el título */
+.eyebrow {margin-bottom: 14px; color: #1686a8; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;}

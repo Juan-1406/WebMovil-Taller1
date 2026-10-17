@@ -1,1 +1,7 @@
-# WebMovil-Taller1
+# Taller 01 - Int. al Desarollo Web/Móvil
+
+## Integrantes
+    - Juan Alvarado
+    -
+    -
+    -
