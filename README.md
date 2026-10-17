@@ -2,6 +2,6 @@
 
 ## Integrantes
     - Juan Alvarado
+    - 
     -
-    -
-    -
+    - Gabriel Astudillo
