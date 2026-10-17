@@ -152,11 +152,40 @@
             <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
             <label for="entrega">Método de entrega</label>
             <select id="entrega" name="entrega" required>
-                <option value="">Selecciona una opción</option>
-                <option value="retiro">Retiro en tienda</option>
-                <option value="domicilio">Entrega a domicilio</option>
+              <option value="">Selecciona una opción</option>
+              <option value="retiro">Retiro en tienda</option>
+              <option value="domicilio">Entrega a domicilio</option>
             </select>
 
+            <!-- Estos campos aparecerán solo para entrega a domicilio -->
+            <div id="direccionDomicilio" hidden>
+              <label for="region">Región</label>
+              <select id="region" name="region" disabled>
+                  <option value="">Selecciona tu región</option>
+                  <option value="Arica y Parinacota">Arica y Parinacota</option>
+                  <option value="Tarapacá">Tarapacá</option>
+                  <option value="Antofagasta">Antofagasta</option>
+                  <option value="Atacama">Atacama</option>
+                  <option value="Coquimbo">Coquimbo</option>
+                  <option value="Valparaíso">Valparaíso</option>
+                  <option value="Metropolitana de Santiago">Metropolitana</option>
+                  <option value="Libertador General Bernardo O'Higgins">Del Libertador Bernardo O'Higgins</option>
+                  <option value="Maule">Del Maule</option>
+                  <option value="Ñuble">De Ñuble</option>
+                  <option value="Biobío">Del Bio Bio</option>
+                  <option value="La Araucanía">La Araucanía</option>
+                  <option value="Los Ríos">Los Ríos</option>
+                  <option value="Los Lagos">Los Lagos</option>
+                  <option value="Aysén">Aysén</option>
+                  <option value="Magallanes">Magallanes y La Ant. Chilena</option>
+              </select>
+              <label for="comuna">Comuna</label>
+              <input type="text" id="comuna" name="comuna"
+                      placeholder="Ej. La Serena" disabled>
+              <label for="direccion">Dirección</label>
+              <input type="text" id="direccion" name="direccion"
+                      placeholder="Calle, número, departamento o casa" disabled>
+            </div>
             <button type="submit" class="boton-pedido"> Confirmar pedido </button>
         </form>
         <p id="mensajePedido" aria-live="polite"></p>

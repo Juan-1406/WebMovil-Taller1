@@ -153,3 +153,29 @@ if (modal && abrirCompra && cerrarModal && formulario && mensajePedido) {
     formulario.reset();
   });
 }
+
+/* --- Campos de dirección según el tipo de entrega --- */
+const selectorEntrega = document.getElementById('entrega');
+const camposDomicilio = document.getElementById('direccionDomicilio');
+const selectorRegion = document.getElementById('region');
+const campoComuna = document.getElementById('comuna');
+const campoDireccion = document.getElementById('direccion');
+
+function actualizarEntrega() {
+    const esDomicilio = selectorEntrega.value === 'domicilio';
+
+    // Mostrar u ocultar los campos
+    camposDomicilio.hidden = !esDomicilio;
+
+    // Activar o desactivar los campos obligatorios
+    [selectorRegion, campoComuna, campoDireccion].forEach((campo) => {campo.disabled = !esDomicilio; campo.required = esDomicilio;});
+}
+
+// Detectar cuando el cliente cambia el método de entrega
+selectorEntrega.addEventListener('change', actualizarEntrega);
+
+// Dejar el formulario en su estado inicial al reiniciarlo
+formulario.addEventListener('reset', () => {
+    camposDomicilio.hidden = true;
+    [selectorRegion, campoComuna, campoDireccion].forEach((campo) => {campo.disabled = true; campo.required = false;});
+});
