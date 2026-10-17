@@ -120,3 +120,36 @@ if (seccionComprar && apple) {
   });
 }
 
+/* --- Formulario emergente de compra --- */
+const modal = document.getElementById('modalCompra');
+const abrirCompra = document.getElementById('abrirCompra');
+const cerrarModal = document.getElementById('cerrarModal');
+const formulario = document.getElementById('formCompra');
+const mensajePedido = document.getElementById('mensajePedido');
+
+// Abrir el formulario al pulsar "Comprar ahora"
+if (modal && abrirCompra && cerrarModal && formulario && mensajePedido) {
+  abrirCompra.addEventListener('click', (evento) => {
+    evento.preventDefault();
+    modal.classList.add('activo');
+  });
+
+  // Cerrar con la X
+  cerrarModal.addEventListener('click', () => {modal.classList.remove('activo');});
+
+  // Cerrar al pulsar fuera del formulario
+  modal.addEventListener('click', (evento) => {
+    if (evento.target === modal) {
+      modal.classList.remove('activo');
+    }
+  });
+
+  // Mostrar confirmación al enviar
+  formulario.addEventListener('submit', (evento) => {
+    evento.preventDefault();
+    const nombre = document.getElementById('nombre').value.trim();
+    const cantidad = document.getElementById('cantidad').value;
+    mensajePedido.textContent = `¡Gracias, ${nombre}! Tu solicitud de ${cantidad} unidad(es) fue registrada.`;
+    formulario.reset();
+  });
+}

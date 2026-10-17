@@ -250,15 +250,8 @@ li:hover {
 /* Texto pequeño sobre el título */
 .eyebrow {margin-bottom: 14px; color: #1686a8; font-size: 0.75rem; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;}
 
-
-
-
 /* --- Manzanas laterales--- */
-.cta {
-  position: relative;
-  overflow: hidden; 
-}
-
+.cta {position: relative; overflow: hidden;}
 .side-apple {
   position: absolute;
   top: 50%;
@@ -304,3 +297,26 @@ li:hover {
   .side-apple.left { left: -25px; }
   .side-apple.right { right: -25px; }
 }
+
+/* Fondo de la ventana emergente */
+.modal-compra {display: none; position: fixed; inset: 0; z-index: 1000; background: rgba(3, 35, 55, 0.55); backdrop-filter: blur(8px); justify-content: center;
+    align-items: center; padding: 20px; overflow-y: auto;}
+
+/* Se muestra cuando se activa */
+.modal-compra.activo {display: flex;}
+
+/* Contenedor del formulario */
+.contenido-modal {position: relative; width: 100%; max-width: 460px; max-height: 90vh; overflow-y: auto; padding: 32px;
+    border: 1px solid rgba(255, 255, 255, 0.8); border-radius: 28px; background: linear-gradient(145deg, #f4fdff, #d8f5ff);
+    box-shadow: 0 20px 60px rgba(0, 100, 150, 0.25); color: #063b54;
+}
+.contenido-modal h2 {margin: 8px 0; color: #0879a8;}
+.contenido-modal form {display: flex; flex-direction: column; gap: 10px; margin-top: 22px;}
+.contenido-modal input,
+.contenido-modal select {width: 100%; padding: 12px; border: 1px solid #b6dce9; border-radius: 12px; background: rgba(255, 255, 255, 0.85); color: #063b54; font: inherit;}
+.cerrar-modal {position: absolute; top: 12px; right: 16px; border: none; background: transparent; color: #0879a8; font-size: 30px; cursor: pointer;}
+.boton-pedido {margin-top: 12px; padding: 14px; border: none; border-radius: 30px; background: linear-gradient(135deg, #18b8dc, #0879a8);
+    color: white; font: inherit; font-weight: bold; cursor: pointer; box-shadow: 0 6px 18px rgba(8, 121, 168, 0.25);
+  }
+.boton-pedido:hover {transform: translateY(-2px);}
+#mensajePedido {margin-top: 12px;}

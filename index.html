@@ -102,7 +102,7 @@
     <section id="comprar" class="section cta">
       <h2 class="reveal">Prueba la manzana más fresca</h2>
       <p class="reveal">Disponible por tiempo limitado.</p>
-      <a href="#inicio" class="btn">Comprar ahora</a>
+      <a href="#" class="btn" id="abrirCompra">Comprar ahora</a>
     </section>
   </main>
 
@@ -131,6 +131,34 @@
     </div>
     <p class="copy">© 2026 AquaApple · Proyecto Académico, Taller 1 Web Móvil</p>
   </footer>
+
+  <!-- Ventana de compra -->
+  <div class="modal-compra" id="modalCompra">
+    <div class="contenido-modal">
+        <button class="cerrar-modal" id="cerrarModal" type="button" aria-label="Cerrar">&times;</button>
+        <p class="eyebrow">AQUAAPPLE</p>
+        <h2>¡Haz tu pedido!</h2>
+        <p>Completa los datos para solicitar tu producto.</p>
+
+        <form id="formCompra">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            <label for="correo">Correo electrónico</label>
+            <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required>
+            <label for="cantidad">Cantidad</label>
+            <input type="number" id="cantidad" name="cantidad" min="1" value="1" required>
+            <label for="entrega">Método de entrega</label>
+            <select id="entrega" name="entrega" required>
+                <option value="">Selecciona una opción</option>
+                <option value="retiro">Retiro en tienda</option>
+                <option value="domicilio">Entrega a domicilio</option>
+            </select>
+
+            <button type="submit" class="boton-pedido"> Confirmar pedido </button>
+        </form>
+        <p id="mensajePedido" aria-live="polite"></p>
+    </div>
+  </div>
 
   <script src="js/script.js"></script>
 </body>
